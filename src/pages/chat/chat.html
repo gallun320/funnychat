@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title class="color--bg color--title-color">
+        <h5 class="color--title-color">Reservoir Dogs</h5>
+  
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content>
+    <div class="message_container">
+      <div class="message_item d-flex" *ngFor="let msg of listMesages">
+        <span class="message_title font-color-{{ msg.color }}" [class.message_item--start]="msg.nick !== personNick" [class.message_item--end]="msg.nick === personNick">
+          {{ msg.nick }}
+        </span>
+        <span class="message_text color-{{ msg.color }}" [class.message_item--start]="msg.nick !== personNick" [class.message_item--end]="msg.nick === personNick">
+          {{ msg.msg }}
+        </span>
+      </div>
+    </div>
+    <div class="send_container d-flex">
+      <ion-textarea [(ngModel)]="model.msg" class="send_input" placeholder="Input msg"></ion-textarea>
+      <button ion-button (click)="sendMessage()">Send</button>
+    </div>
+</ion-content>

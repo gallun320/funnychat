@@ -1,14 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title class="color--bg color--title-color">
+      <h5 class="color--title-color">Reservoir Dogs</h5>
+
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+<ion-content padding class="color--bg">
+
+  <p class="color--title-color color--title-center">
+    What your color?
   </p>
+
+  <div class="color__wrapper">
+    <div class="color color-white" (click)="chooseColor('white')"></div>
+    <div class="color color-orange" (click)="chooseColor('orange')"></div>
+    <div class="color color-yellow" (click)="chooseColor('yellow')"></div>
+    <div class="color color-pink" (click)="chooseColor('pink')"></div>
+    <div class="color color-blue" (click)="chooseColor('blue')"></div>
+    <div class="color color-brown" (click)="chooseColor('brown')"></div>
+  </div>
+
+  <button ion-button block (click)="goToNextpage()">Go to chat</button>
+
 </ion-content>
