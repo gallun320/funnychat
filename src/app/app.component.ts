@@ -2,7 +2,16 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import * as firebase from "firebase";
 
+var config = {
+      apiKey: "AIzaSyBysr3dYp02zQtMf8ZqMkA4xcjSpGKw9yY",
+      authDomain: "fynnychat.firebaseapp.com",
+      databaseURL: "https://fynnychat.firebaseio.com",
+      projectId: "fynnychat",
+      storageBucket: "fynnychat.appspot.com",
+      messagingSenderId: "399911137193"
+    };
 
 import { ChatPage } from '../pages/chat/chat';
 @Component({
@@ -18,6 +27,8 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    firebase.initializeApp(config);
   }
 }
 
